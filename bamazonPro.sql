@@ -14,7 +14,10 @@ INSERT INTO products (
 ("ramen noodle", "grocery", 3.88, 20),
 ("calvin klein", "fashion", 67.99, 15),
 ("baby diaper", "baby", 3.89, 45),
-("car battery", "automotive", 49.95, 160)
+("car battery", "automotive", 49.95, 160),
+("hair brush", "beauty", 3.95, 10),
+("multi vitamins", "health", 50.45, 40),
+("treadmill machine", "sports", 700.95, 5)
 ;
 
 INSERT INTO departments (
@@ -27,4 +30,7 @@ INSERT INTO departments (
 ("grocery", 300.00),
 ("fashion", 120.00),
 ("baby", 20.00),
-("automotive", 80.00)
+("automotive", 80.00),
+("beauty", 30.00),
+("health", 100.00),
+("sports", 1500.00)
