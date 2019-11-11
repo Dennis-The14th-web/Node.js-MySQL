@@ -11,7 +11,7 @@ function handleRequest(request, response) {
   // set requestData to empty var
   var requestData = '';
 
-  // (listener) if the request has something (receives any data) in its data key, it will fire off a fxn that takes requestData and puts data to it
+  // (listener) if the request has something (receives any data) in its data key, it will fire off a function that takes requestData and puts data to it
   request.on('data', function(data) {
     requestData = data;
   });
@@ -19,10 +19,10 @@ function handleRequest(request, response) {
   // when request end triggers listener, turn request data into a string and show it in response.end
   request.on('end', function(){
     output = requestData.toString();
-    response.end('Your post had ' + output);
+    response.end('TEST ' + output);
   });
 }
 
 server.listen(port, function() {
-  console.log('Server is running');
+  console.log('Server is alive')
 });
