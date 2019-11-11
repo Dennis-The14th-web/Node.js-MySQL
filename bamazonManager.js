@@ -111,7 +111,7 @@ var workplace = {
       if(userData.continue === true){
         workplace.selectAction();
       } else {
-        console.log(color.bgCyan('\nYou have been successfully logged out of the Bamazon workplace.\n'));
+        console.log(color.bgMagenta('\nYou have been successfully logged out of the Bamazon workplace.\n'));
       }
     });
   }

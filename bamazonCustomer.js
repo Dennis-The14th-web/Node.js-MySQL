@@ -158,7 +158,7 @@ var storefront = {
       if(userData.continue === true) {
         database.listItems(storefront.getOrder);
       } else {
-        console.log(color.bgCyan('\nCome back soon!\n'));
+        console.log(color.bgMagenta('\nCome back soon!\n'));
       }
     })
   },
