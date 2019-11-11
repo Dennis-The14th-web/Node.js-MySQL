@@ -1,6 +1,6 @@
 // DEPENDENCIES
 
-// var color = require('cli-color');
+var color = require('colors');
 
 // CONSTRUCTOR
 
@@ -14,22 +14,22 @@ var Product = function(productObj) {
 
 Product.prototype.displayItemToCustomer = function() {
   console.log('\n' + 
-            color.green(this.id) +
+            color.magenta.bold(this.id) +
             '\t' + 
-            color.cyan(this.name) + 
+            color.cyan.bold(this.name) + 
             '\t' + 
-            color.magenta(this.price));
+            color.green.bold(this.price));
 }
 
 Product.prototype.displayItemToManager = function() {
   console.log('\n' + 
-            color.green(this.id)+
+            color.magenta.bold(this.id)+
             '\t' + 
-            color.cyan(this.name) + 
+            color.cyan.bold(this.name) + 
             '\t' + 
-            color.magenta(this.price) + 
+            color.green.bold(this.price) + 
             '\t' + 
-            color.yellow(this.quantity));
+            color.yellow.bold(this.quantity));
 }
 
 module.exports = {
