@@ -22,10 +22,16 @@
 - Database. 
 
     * Docker
-    * MySQL. 
+    * MySQL 
 
 # Demostration
 
 - Click on the image below that links to the video of my Bamazon App demo.
 
 <a href="https://youtu.be/zkEF8Z8OAK0"><img src="images/nodejs&mysql02.png" ></a>
+
+- These Gif images displays the product total profit sales by department.
+
+    <a href="https://giphy.com/gif/3facxx"><img src="https://media.giphy.com/media/URvES8WTFqDHTAYw12/giphy.gif" title="made at giphy.com"/></a>
+
+    <a href="https://giphy.com/gif/3facxx"><img src="https://media.giphy.com/media/VEgifYiWGdELK2crVQ/giphy.gif" title="made at giphy.com"/></a>
