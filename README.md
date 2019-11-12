@@ -32,6 +32,6 @@
 
 - These Gif images displays the product total profit sales by department.
 
-    <a href="https://giphy.com/gif/3facxx"><img src="https://media.giphy.com/media/URvES8WTFqDHTAYw12/giphy.gif" title="made at giphy.com"/></a>
+    <a href="https://giphy.com/gif/3facxx"><img src="https://media.giphy.com/media/VG2EkqVdCZ0hpTU1KV/giphy.gif" title="made at giphy.com"/></a>
 
-    <a href="https://giphy.com/gif/3facxx"><img src="https://media.giphy.com/media/VEgifYiWGdELK2crVQ/giphy.gif" title="made at giphy.com"/></a>
+    <a href="https://giphy.com/gif/3facxx"><img src="https://media.giphy.com/media/VdWosnetAHl5cjeHP3/giphy.gif" title="made at giphy.com"/></a>
