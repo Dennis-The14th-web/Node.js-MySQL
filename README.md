@@ -12,11 +12,11 @@
 
 - Languages.
 
-    * Node.js, JavaScript, ES6, NPM (Node Package Manager).
+    * Node.js, JavaScript, ES6, NPM (Node Package Manager), 'docker-compose.yml', 'mysql.sh'.
 
 - Database. 
 
-    * Docker (.yml), MySQL. (.sh)
+    * Docker, MySQL. 
 
 # Demostration
 
