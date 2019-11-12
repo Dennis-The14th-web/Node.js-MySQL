@@ -7,7 +7,7 @@ var color = require('colors');
 
 // USER INTERACTION
 
-var office = {
+var workspace = {
 
   // List a set of menu options:
   selectAction: function() {
@@ -22,7 +22,7 @@ var office = {
           database.salesByDepartment();
           break;
         case 'Create New Department': 
-          office.addWhichDepartment();
+          workspace.addWhichDepartment();
           break;
         default:
           database.salesByDepartment();
@@ -54,7 +54,7 @@ var office = {
       name: 'continue'
     }).then(function(userData){
       if(userData.continue === true){
-        office.selectAction();
+        workspace.selectAction();
       } else {
         console.log(color.bgBlue('\nExit Manager Activities.\n'));
       }
@@ -100,13 +100,13 @@ var database = {
 var displayTable = {
   departmentSales: function(deptsArr) {
     console.table(deptsArr);
-    office.checkContinue();
+    workspace.checkContinue();
   },
 
   newDepartment: function(department) {
     console.table[department];
-    office.checkContinue();
+    workspace.checkContinue();
   }
 }
 
-office.selectAction();
+workspace.selectAction();

@@ -8,7 +8,7 @@ var color = require('colors');
 
 // USER INTERACTION
 
-var workplace = {
+var activities = {
   'stockArray': [], 
   'availableIds': [],
 
@@ -23,20 +23,20 @@ var workplace = {
     }).then(function(userData){
       switch(userData.selectedAction) {
         case 'View Products For Sale': 
-          database.listAllProducts(workplace.checkContinue);
+          database.listAllPros(activities.checkContinue);
           break;
         case 'View Low Inventory': 
-          database.listLowInventory(workplace.checkContinue);
+          database.lowInventoryList(activities.checkContinue);
           break;
         case 'Add to Inventory':
-          database.listAllProducts(workplace.addWhichInventory);
+          database.listAllPros(activities.addWhichInventory);
 
           break;
         case 'Add New Product':
-          workplace.addWhichProduct();
+          activities.addWhichPro();
           break;
         default:
-          database.listAllProducts();
+          database.listAllPros();
       }
     })
   }, 
@@ -49,7 +49,7 @@ var workplace = {
       message: 'Enter the item id',
       name: 'itemId',
       validate: function(value) {
-        if (value.length && workplace.availableIds.indexOf(parseInt(value)) > -1) {
+        if (value.length && activities.availableIds.indexOf(parseInt(value)) > -1) {
           return true;
         } else {
           console.log(color.red('\nPlease enter the id of an available product'));
@@ -70,12 +70,12 @@ var workplace = {
         }
       }
     }]).then(function(userData){
-      database.addStockToInventory(userData.itemId, userData.addQuantity, workplace.checkContinue);
+      database.addStockToInventory(userData.itemId, userData.addQuantity, activities.checkContinue);
     })
   },
 
   // If a manager selects Add New Product, it should allow the manager to add a completely new product to the store.
-  addWhichProduct: function() {
+  addWhichPro: function() {
     inquirer.prompt([
     {
       type: 'input',
@@ -98,7 +98,7 @@ var workplace = {
       name: 'stock_quantity'
     }
     ]).then(function(userData){
-      database.addItemToInventory(userData, workplace.checkContinue);
+      database.addItemToInventory(userData, activities.checkContinue);
     })
   }, 
 
@@ -109,9 +109,9 @@ var workplace = {
       name: 'continue'
     }).then(function(userData){
       if(userData.continue === true){
-        workplace.selectAction();
+        activities.selectAction();
       } else {
-        console.log(color.bgMagenta('\nYou have been successfully logged out of the Bamazon workplace.\n'));
+        console.log(color.bgMagenta('\nYou have been successfully logged out of the Bamazon activities.\n'));
       }
     });
   }
@@ -121,7 +121,7 @@ var workplace = {
 
 var database = {
   // list every available item: the item IDs, names, prices, and quantities.
-  listAllProducts: function(func) {
+  listAllPros: function(func) {
     connection.query('SELECT * FROM products', function(error, result) {
       if(error) {
         console.log(error);
@@ -129,11 +129,11 @@ var database = {
         console.log(color.bgYellow('\nBamazon Workplace - All Products \n'));
         console.log(('id\titem\t\tprice\tquantity'));
         for(var i = 0; i < result.length; i++) {
-          var newProduct = new Product(result[i]);
-          var id = newProduct.id;
-          workplace.availableIds.push(id);
-          workplace.stockArray.push(newProduct);
-          newProduct.displayItemToManager();
+          var newPro = new Product(result[i]);
+          var id = newPro.id;
+          activities.availableIds.push(id);
+          activities.stockArray.push(newPro);
+          newPro.displayItemToManager();
         }
 
         func(); 
@@ -142,17 +142,17 @@ var database = {
   },
 
   // list all items with a inventory count lower than five.
-  listLowInventory: function(func) {
+  lowInventoryList: function(func) {
     connection.query('SELECT * FROM products WHERE stock_quantity < ?', 5, function(error, result) {
       if(error) {
         console.log(error);
       } else {
-        console.log(color.bgRed('\nBamazon Workplace - Low Inventory\n'));
+        console.log(color.bgRed('\nBamazon Activities - Low Inventory\n'));
         console.log(('id\titem\t\tprice\tquantity'));
         for(var i = 0; i < result.length; i++) {
-          var newProduct = new Product(result[i]);
-          workplace.stockArray.push(newProduct);
-          newProduct.displayItemToManager();
+          var newPro = new Product(result[i]);
+          activities.stockArray.push(newPro);
+          newPro.displayItemToManager();
         }
 
         func(); 
@@ -172,8 +172,8 @@ var database = {
           } else {
             console.log(color.bgGreen('\nInventory add successful!\n'));
             console.log(('id\titem\t\tprice\tquantity'));
-            var updatedProduct = new Product(result[0]);
-            updatedProduct.displayItemToManager();
+            var updatedPro = new Product(result[0]);
+            updatedPro.displayItemToManager();
 
             func(); 
           }
@@ -201,8 +201,8 @@ var database = {
           product.item_id = insertId;
           console.log(color.bgGreen('\nProduct add successful!\n'));
           console.log(('id\titem\t\tprice\tquantity'));
-          var newProduct = new Product(product);
-            newProduct.displayItemToManager();
+          var newPro = new Product(product);
+            newPro.displayItemToManager();
 
           func(); 
         }
@@ -214,4 +214,4 @@ var database = {
 // INITIALIZE
 
 
-workplace.selectAction();
+activities.selectAction();

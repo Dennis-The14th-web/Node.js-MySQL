@@ -8,8 +8,8 @@ var color = require('colors');
 // DATABASE
 
 var database = {
-  // initially display all items available for sale, include names prices ids 
-  listItems: function(func) {
+  // initially display all items available for sale, include names prices their ids 
+  itemsList: function(func) {
     connection.query('SELECT * FROM products WHERE stock_quantity > ?', 0, function(error, result){
       if(error) {
         console.log(error);
@@ -18,11 +18,11 @@ var database = {
         console.log(color.bgCyan('\nBamazon Storefront\n'));
         console.log(('id\titem\t\tprice'));
         for(var i = 0; i < itemArray.length; i++) {
-          var newProduct = new Product(itemArray[i]);
-          var id = newProduct.id
-          storefront.stockArray.push(newProduct);
+          var newPro = new Product(itemArray[i]);
+          var id = newPro.id
+          storefront.stockArray.push(newPro);
           storefront.availableIds.push(id);
-          newProduct.displayItemToCustomer();
+          newPro.displayItemToCustomer();
         }
         // callback, do something after listing which might change
         func();
@@ -76,12 +76,12 @@ var database = {
           // calculate total
           transactionTotal = unitPrice*purchaseQuantity;
           // log in database
-          database.updateProductRevenue(itemId, soldProduct, transactionTotal);
+          database.updateProductRev(itemId, soldProduct, transactionTotal);
         }
       });
   },
 
-  updateProductRevenue: function(itemId, soldProduct, transactionTotal) {
+  updateProductRev: function(itemId, soldProduct, transactionTotal) {
     //update total sales in the products table
     connection.query('UPDATE products SET product_sales = (product_sales + ?) WHERE item_id = ?', [transactionTotal, itemId], function(error, result) {
       if (error) {
@@ -94,9 +94,9 @@ var database = {
     });
   }, 
 
-  updateDepartmentSales: function(soldProduct, totalRevenue) {
+  updateDepartmentSales: function(soldProduct, totalRev) {
     // update total sales in the departments table
-    connection.query('UPDATE departments SET total_sales = (total_sales + ?) WHERE department_name = ?',[totalRevenue, soldProduct.dept], function(error, result){
+    connection.query('UPDATE departments SET total_sales = (total_sales + ?) WHERE department_name = ?',[totalRev, soldProduct.dept], function(error, result){
       if(error){
         console.log(error);
       } else {
@@ -126,7 +126,7 @@ var storefront = {
           if (value.length && storefront.availableIds.indexOf(parseInt(value)) > -1) {
             return true;
           } else {
-            console.log(color.red('\nPlease enter the id of an available product'));
+            console.log(color.red('\nPlease enter the id of a available product'));
             return;
           }
         }
@@ -181,4 +181,4 @@ var storefront = {
 
 // INITIALIZE
 
-database.listItems(storefront.getOrder);
+database.itemsList(storefront.getOrder);
