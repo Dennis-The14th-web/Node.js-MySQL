@@ -12,14 +12,20 @@
 
 - Languages.
 
-    * Node.js, JavaScript, ES6, NPM (Node Package Manager), 'docker-compose.yml', 'mysql.sh'.
+    * Node.js
+    * JavaScript
+    * ES6, NPM (Node Package Manager)
+    * docker-compose.yml
+    * mysql.sh
+    * .gitignore
 
 - Database. 
 
-    * Docker, MySQL. 
+    * Docker
+    * MySQL. 
 
 # Demostration
 
-- Click the image below to watch video of Bamazon App demo.
+- Click on the image below that links to the video of my Bamazon App demo.
 
 <a href="https://youtu.be/zkEF8Z8OAK0"><img src="images/nodejs&mysql02.png" ></a>
