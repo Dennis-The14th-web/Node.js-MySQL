@@ -156,7 +156,7 @@ var storefront = {
       name: 'continue'
     }).then(function(userData) {
       if(userData.continue === true) {
-        database.listItems(storefront.getOrder);
+        database.itemsList(storefront.getOrder);
       } else {
         console.log(color.bgMagenta('\nCome back soon!\n'));
       }
@@ -170,7 +170,7 @@ var storefront = {
       name: 'continue'
     }).then(function(userData){
       if(userData.continue === true){
-        database.listItems(storefront.getOrder);
+        database.itemsList(storefront.getOrder);
       } else {
         console.log(color.bgCyan('\nCome back soon!\n'));
       }
