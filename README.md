@@ -1,6 +1,6 @@
 # Node.js-MySQL
 
-# Functions
+## Functions
 
 - Bamazon is an Amazon-like storefront application that runs on a command line interface.
 
@@ -8,21 +8,23 @@
 
 - This app tracks product sales across store's departments and then provide a summary of the highest-grossing departments in the store.
 
-# Technologies
+## Technologies
+
+- languages / Libraries
 
     * Node.js
     * JavaScript
     * ES6, NPM (Node Package Manager)
     * docker-compose.yml
-    * mysql.sh
-    * .gitignore
+    * SQL
+  
 
-- Database. 
+- Database / Container
 
     * Docker
     * MySQL 
 
-# Demostration
+## Demostration
 
 - Click on the image below that links to the video of my Bamazon App demo.
 
