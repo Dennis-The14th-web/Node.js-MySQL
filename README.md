@@ -14,9 +14,9 @@
 
     * JavaScript
     * es6
+    * SQL
     * Node.js 
     * NPM (Node Package Manager)
-    * SQL
   
 
 - Database / Container
