@@ -13,10 +13,10 @@
 - Languages / Runtime Environment 
 
     * JavaScript
-    * es6
     * SQL
+    * ES6 ( ECMAScript 6 )
     * Node.js 
-    * NPM (Node Package Manager)
+    * NPM ( Node Package Manager )
   
 
 - Database / Container
