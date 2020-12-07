@@ -10,8 +10,6 @@
 
 # Technologies
 
-- Languages.
-
     * Node.js
     * JavaScript
     * ES6, NPM (Node Package Manager)
