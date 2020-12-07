@@ -21,8 +21,8 @@
 
 - Database / Container
 
-    * Docker
-    * MySQL 
+    * MySQL
+    * Docker 
 
 ## Demostration
 
