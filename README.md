@@ -10,12 +10,12 @@
 
 ## Technologies
 
-- languages / Libraries
+- Languages / Runtime Environment 
 
-    * Node.js
     * JavaScript
-    * ES6, NPM (Node Package Manager)
-    * docker-compose.yml
+    * es6
+    * Node.js 
+    * NPM (Node Package Manager)
     * SQL
   
 
